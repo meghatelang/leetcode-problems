@@ -37,7 +37,7 @@ class SinglyLinkedList{
         this.tail.next = null;
         this.length--;
         if(this.length == 0){
-            this.heade = null;
+            this.head = null;
             this.tail = null;
         }
         return current;
