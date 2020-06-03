@@ -31,9 +31,7 @@ class SinglyLinkedList{
         let newTail = current;
         while(current.next){
             newTail = current;
-            console.log("new",newTail)
             current = current.next;
-            console.log("new curr",current.val)
         }
         this.tail = newTail;
         this.tail.next = null;
