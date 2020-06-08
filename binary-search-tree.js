@@ -50,6 +50,60 @@ class BinarySearchTree{
         }
         return false;
     }
+    BFS() {
+        //Breadth first search traversal
+        let queue = [];
+        let data = [];
+        let node = this.root;
+        queue.push(node);
+        while(queue.length){
+            node = queue.shift();
+            data.push(node.val);
+            if(node.left) queue.push(node.left);
+            if(node.right) queue.push(node.right)
+        }
+        return data;
+    }
+    DFSPreOrder(){
+        //Depth First Search - Pre order traversal
+        let data = [];
+        let node = this.root;
+
+        function traverse(node){
+            data.push(node.val);
+            if(node.left) traverse(node.left);
+            if(node.right) traverse(node.right);
+
+        }
+        traverse(node);
+        return data;
+    }
+    DFSPostOrder(){
+        //Depth First Search - Post order traversal
+        let data=[];
+        let node = this.root;
+
+        function traverse(node){
+            if(node.left) traverse(node.left);
+            if(node.right) traverse(node.right);
+            data.push(node.val);
+        }
+        traverse(node);
+        return data;
+    }
+    DFSInOrder(){
+        //Depth First Search - In order traversal
+        let data = [];
+        let node = this.root;
+
+        function traverse(node){
+            if(node.left) traverse(node.left);
+            data.push(node.val);
+            if(node.right) traverse(node.right);
+        }
+        traverse(node);
+        return data;
+    }
         
 }
 
