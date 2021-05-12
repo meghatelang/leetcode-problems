@@ -1,0 +1,11 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var repeatedNTimes = function(nums) {
+    let obj = {};
+    for(let num of nums){
+        obj[num] = ++obj[num] || 1;
+        if(obj[num] > 1) return num;
+    }
+};
